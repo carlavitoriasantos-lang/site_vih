@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Nocturne Archive</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">THE NOCTURNE ARCHIVE</h2>
+
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#characters">Personagens</a>
+            <a href="#story">História</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PÁGINA INICIAL -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+                <p class="subtitle">A GOTHIC INTERACTIVE NOVEL</p>
+
+                <h1>
+                    THE NOCTURNE
+                    <span>ARCHIVE</span>
+                </h1>
+
+                <p>
+                    O silêncio guarda aquilo que a noite
+                    não consegue esquecer.
+                </p>
+
+                <button onclick="startStory()">
+                    INICIAR HISTÓRIA
+                </button>
+            </div>
+
+        </section>
+
+        <!-- PERSONAGENS -->
+        <section id="characters">
+
+            <h2>THE EIGHT SOULS</h2>
+
+            <div id="character-list" class="character-list"></div>
+
+        </section>
+
+        <!-- HISTÓRIA -->
+        <section id="story">
+
+            <h2>CAPÍTULO I</h2>
+
+            <div class="story-box">
+
+                <p id="dialogue">
+                    A carruagem parou diante da Mansão Vesper.
+                    A noite parecia observar você.
+                </p>
+
+                <div id="choices">
+
+                    <button onclick="choose('careful')">
+                        Observar a mansão.
+                    </button>
+
+                    <button onclick="choose('bold')">
+                        Entrar imediatamente.
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        THE NOCTURNE ARCHIVE · EST. 1888
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

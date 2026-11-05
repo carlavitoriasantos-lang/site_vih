@@ -1,0 +1,126 @@
+
+const characters = [
+    {
+        name: "Seraphine Voss",
+        role: "A herdeira sem retrato",
+        gender: "Mulher"
+    },
+    {
+        name: "Isolde Blackwell",
+        role: "A observadora",
+        gender: "Mulher"
+    },
+    {
+        name: "Vesper Ardent",
+        role: "A voz do salão",
+        gender: "Mulher"
+    },
+    {
+        name: "Evelyn Mourne",
+        role: "A guardiã",
+        gender: "Mulher"
+    },
+    {
+        name: "Lucien Voss",
+        role: "O anfitrião",
+        gender: "Homem"
+    },
+    {
+        name: "Alistair Crowe",
+        role: "O arquivista",
+        gender: "Homem"
+    },
+    {
+        name: "Dorian Ashford",
+        role: "O forasteiro",
+        gender: "Homem"
+    },
+    {
+        name: "Silas Wren",
+        role: "O silencioso",
+        gender: "Homem"
+    }
+];
+
+// MOSTRAR PERSONAGENS
+
+const characterList =
+    document.getElementById("character-list");
+
+characters.forEach(character => {
+
+    const card = document.createElement("div");
+
+    card.className = "character-card";
+
+    card.innerHTML = `
+        <h3>${character.name}</h3>
+        <p>${character.role}</p>
+        <small>${character.gender}</small>
+    `;
+
+    characterList.appendChild(card);
+
+});
+
+// INICIAR HISTÓRIA
+
+function startStory() {
+
+    document.getElementById("story")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+// ESCOLHAS
+
+function choose(choice) {
+
+    const dialogue =
+        document.getElementById("dialogue");
+
+    const choices =
+        document.getElementById("choices");
+
+    if (choice === "careful") {
+
+        dialogue.textContent =
+            "Você observa os símbolos no portão. " +
+            "Há algo familiar naquele desenho...";
+
+    }
+
+    if (choice === "bold") {
+
+        dialogue.textContent =
+            "Você empurra o portão. " +
+            "Um rangido ecoa pela mansão. " +
+            "Uma janela se ilumina no terceiro andar.";
+
+    }
+
+    localStorage.setItem(
+        "nocturne_choice",
+        choice
+    );
+
+    choices.innerHTML = `
+        <button onclick="continueStory()">
+            CONTINUAR
+        </button>
+    `;
+
+}
+
+// CONTINUAR
+
+function continueStory() {
+
+    document.getElementById("dialogue")
+        .textContent =
+        "As portas da Mansão Vesper começam a se abrir. " +
+        "Alguém está esperando por você.";
+
+}

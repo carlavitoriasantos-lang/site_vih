@@ -1,0 +1,210 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09070b;
+    color: #eee4e6;
+    font-family: 'Crimson Text', serif;
+}
+
+/* MENU */
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    border-bottom: 1px solid #39232e;
+    background: #0c090e;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #c5b9bd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a64d61;
+}
+
+/* PÁGINA INICIAL */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 8%;
+    background:
+        linear-gradient(
+            90deg,
+            #09070b 15%,
+            rgba(9,7,11,0.75) 60%,
+            rgba(9,7,11,0.3)
+        ),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.subtitle {
+    color: #b16a7d;
+    letter-spacing: 5px;
+    font-size: 12px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(42px, 7vw, 85px);
+    font-weight: 500;
+    margin: 25px 0;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    display: block;
+    color: #a64d61;
+    font-style: italic;
+}
+
+.hero-content p {
+    color: #c5b9bd;
+    font-size: 21px;
+}
+
+/* BOTÃO */
+
+button {
+    background: #521e31;
+    border: 1px solid #a64d61;
+    color: white;
+    padding: 15px 28px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #87374f;
+    transform: translateY(-3px);
+}
+
+/* SEÇÕES */
+
+section:not(.hero) {
+    padding: 90px 8%;
+}
+
+section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* PERSONAGENS */
+
+.character-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.character-card {
+    background: #151017;
+    border: 1px solid #39232e;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.character-card:hover {
+    border-color: #a64d61;
+    transform: translateY(-5px);
+}
+
+.character-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+.character-card p {
+    color: #b18a96;
+    margin-top: 8px;
+}
+
+/* HISTÓRIA */
+
+.story-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 35px;
+    background: #151017;
+    border: 1px solid #54313f;
+    text-align: center;
+}
+
+.story-box p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #84747c;
+    border-top: 1px solid #39232e;
+    font-size: 12px;
+}
+
+@media (max-width: 750px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .character-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .character-list {
+        grid-template-columns: 1fr;
+    }
+}
